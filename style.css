@@ -1,7 +1,7 @@
 /* --- Importar Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
-/* --- Variables de Color (¡AJUSTA ESTOS VALORES!) --- */
+/* --- Variables de Color (¡AJUSTA ESTOS VALORES SI TIENES LOS HEX EXACTOS DE TU LOGO!) --- */
 :root {
     --color-principal: #004B5A; /* ESTIMADO: Azul/Verde Petróleo Oscuro del logo */
     --color-acento: #E0A800;   /* ESTIMADO: Dorado/Ocre del logo */
@@ -15,13 +15,13 @@
 
 /* --- Estilos Generales --- */
 * {
-    box-sizing: border-box; /* Mejor manejo de padding y borde */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 html {
-    scroll-behavior: smooth; /* Scroll suave al hacer clic en enlaces internos (si los hubiera) */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -29,6 +29,7 @@ body {
     line-height: 1.7;
     background-color: var(--color-fondo-gris);
     color: var(--color-texto-oscuro);
+    font-size: 16px; /* Tamaño base */
 }
 
 /* --- Cabecera --- */
@@ -38,23 +39,21 @@ header {
     padding: 2rem 1rem;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    /* Opcional: Imagen de fondo sutil */
-    /* background-image: linear-gradient(rgba(0, 75, 90, 0.8), rgba(0, 75, 90, 0.8)), url('images/tu-fondo-sutil.jpg'); */
+    /* Si quieres usar fondo sutil, descomenta y ajusta */
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/tu-fondo-sutil.jpg'); */
     /* background-size: cover; */
     /* background-position: center; */
 }
 
-/* Opcional: Estilo del logo si se añade */
-/*
-.logo {
-    max-width: 120px;
+.logo { /* Estilo para tu logo */
+    max-width: 100px; /* Ajusta este tamaño como necesites */
+    height: auto;
     margin-bottom: 1rem;
 }
-*/
 
 header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8em;
+    font-size: 2.5em; /* Ajusta si es necesario */
     margin-bottom: 0.25rem;
     color: var(--color-texto-claro);
 }
@@ -70,58 +69,59 @@ header h2 {
 
 /* --- Contenido Principal y Secciones --- */
 main {
-    max-width: 850px; /* Ancho máximo del contenido */
-    margin: 30px auto; /* Centrar el contenido */
+    max-width: 850px;
+    margin: 30px auto;
     padding: 0 15px;
 }
 
 section {
     background-color: var(--color-fondo-claro);
-    padding: 30px 35px;
-    margin-bottom: 30px;
-    border-radius: 8px; /* Bordes más suaves */
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Sombra más pronunciada */
-    text-align: center; /* Centrar texto en secciones por defecto */
+    padding: 35px 40px; /* Más padding */
+    margin-bottom: 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra un poco más suave */
+    text-align: center;
 }
 
 section h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.8em;
+    font-size: 1.9em; /* Títulos de sección un poco más grandes */
     color: var(--color-principal);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     text-align: center;
 }
 
 /* Sección Cómo Funciona - Lista */
 #como-funciona ol {
-    list-style: none; /* Quita los números por defecto */
+    list-style: none;
     padding-left: 0;
-    counter-reset: step-counter; /* Inicia un contador */
-    max-width: 600px; /* Limita ancho de lista */
-    margin: 0 auto; /* Centra la lista */
-    text-align: left; /* Alinea texto de la lista a la izquierda */
+    counter-reset: step-counter;
+    max-width: 600px;
+    margin: 1.5rem auto 0 auto; /* Más margen arriba */
+    text-align: left;
 }
 
 #como-funciona li {
-    counter-increment: step-counter; /* Incrementa el contador */
-    margin-bottom: 1rem;
+    counter-increment: step-counter;
+    margin-bottom: 1.2rem; /* Más espacio entre pasos */
     position: relative;
-    padding-left: 45px; /* Espacio para el número */
+    padding-left: 50px; /* Más espacio para el número */
+    font-size: 1.05em; /* Texto de pasos ligeramente más grande */
 }
 
 #como-funciona li::before {
-    content: counter(step-counter); /* Muestra el número */
+    content: counter(step-counter);
     position: absolute;
     left: 0;
-    top: 0;
-    background-color: var(--color-acento); /* Círculo con color acento */
+    top: -2px; /* Ajuste vertical */
+    background-color: var(--color-acento);
     color: var(--color-texto-oscuro);
-    width: 30px;
-    height: 30px;
+    width: 35px; /* Números un poco más grandes */
+    height: 35px;
     border-radius: 50%;
     display: inline-block;
     text-align: center;
-    line-height: 30px;
+    line-height: 35px;
     font-weight: bold;
     font-family: 'Playfair Display', serif;
 }
@@ -132,12 +132,12 @@ section h3 {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px; /* Más espacio */
-    margin-top: 20px;
+    gap: 30px 40px; /* Ajusta espacios */
+    margin-top: 25px;
 }
 
 .ejemplo-boton {
-    flex-basis: 220px;
+    flex-basis: 230px;
     text-align: center;
 }
 
@@ -147,72 +147,63 @@ section h3 {
 }
 
 .ejemplo-qr img {
-    max-width: 140px; /* QR un poco más grande */
+    max-width: 130px; /* Tamaño QR */
     height: auto;
     display: block;
     margin: 0 auto 8px auto;
-    border: 4px solid var(--color-fondo-gris); /* Borde sutil al QR */
+    border: 5px solid var(--color-fondo-gris); /* Borde más grueso */
+    border-radius: 4px; /* Redondear borde */
 }
 
 .qr-texto {
-    font-size: 0.85em;
-    color: #666;
+    font-size: 0.9em;
+    color: #555;
     margin: 0;
 }
 
 /* Sección Contacto - Botones */
 .contacto-botones {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px; /* Espacio entre botones de contacto */
 }
 
 /* --- Botones --- */
 .boton, .boton-contacto {
     display: inline-block;
     background-color: var(--color-acento); /* Dorado */
-    color: var(--color-texto-oscuro);
-    padding: 12px 30px; /* Ligeramente más grandes */
+    color: var(--color-texto-oscuro); /* Texto oscuro sobre dorado */
+    padding: 12px 30px;
     text-decoration: none;
-    border-radius: 30px; /* Muy redondeados */
+    border-radius: 30px;
     margin-top: 10px;
-    transition: all 0.3s ease; /* Transición más completa */
-    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    border: none; /* Quita borde por defecto */
     cursor: pointer;
     font-weight: bold;
-    font-size: 1em;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 1.05em; /* Botones ligeramente más grandes */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .boton:hover, .boton-contacto:hover {
-    background-color: var(--color-principal); /* Azul */
+    background-color: var(--color-principal); /* Azul al pasar ratón */
     color: var(--color-texto-claro);
-    transform: translateY(-3px); /* Elevar un poco más */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
-
-/* Botón específico para WhatsApp podría ser verde? (Opcional) */
-/*
-.boton-contacto[href*="wa.me"] {
-    background-color: #25D366;
-    color: white;
-}
-.boton-contacto[href*="wa.me"]:hover {
-    background-color: #1DAE54;
-}
-*/
-
 
 /* --- Pie de Página --- */
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 20px;
+    margin-top: 50px; /* Más espacio antes del footer */
+    padding: 25px;
     color: #666;
     font-size: 0.9em;
     border-top: 1px solid #ddd;
+    background-color: #e9e9e9; /* Fondo leggermente diferente para el footer */
 }
 
 /* --- Responsividad --- */
@@ -223,12 +214,15 @@ footer {
 }
 
 @media (max-width: 480px) {
-    header h1 { font-size: 1.8em; }
+    body { font-size: 15px; } /* Ajuste ligero para móvil */
+    header { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.9em; }
     header h2 { font-size: 1em; }
-    section { padding: 20px 25px; }
-    section h3 { font-size: 1.4em; }
-    #como-funciona li { padding-left: 40px; }
-    #como-funciona li::before { width: 25px; height: 25px; line-height: 25px; }
-    .ejemplo-contenedor { flex-direction: column; } /* Apilar ejemplo en móvil */
-    .boton, .boton-contacto { width: 80%; text-align: center; padding: 12px 15px; font-size: 0.95em;} /* Botones más anchos */
+    main { margin: 20px auto; }
+    section { padding: 25px 20px; margin-bottom: 25px;}
+    section h3 { font-size: 1.5em; margin-bottom: 1.2rem;}
+    #como-funciona li { padding-left: 45px; font-size: 1em;}
+    #como-funciona li::before { width: 30px; height: 30px; line-height: 30px; }
+    .ejemplo-contenedor { flex-direction: column; gap: 25px; } /* Apilar siempre en móvil */
+    .boton, .boton-contacto { width: 90%; padding: 14px 15px; font-size: 1em;} /* Botones anchos y un poco más altos */
 }
